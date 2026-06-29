@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spotify Visualiser</title>
     <script type="module" crossorigin src="./assets/index-DweDM9RM.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-DcZNOpes.css">
+    <link rel="stylesheet" crossorigin href="./assets/index-DcZNOpes.css?v=3">
   </head>
   <body>
     <canvas id="webgl"></canvas>
@@ -42,5 +42,34 @@
         </p>
       </section>
     </main>
+    <script>
+      const root = document.documentElement
+      let targetX = 0
+      let targetY = 0
+      let currentX = 0
+      let currentY = 0
+
+      const updateTarget = (event) => {
+        targetX = (event.clientX / window.innerWidth - 0.5) * 2
+        targetY = (event.clientY / window.innerHeight - 0.5) * 2
+      }
+
+      const resetTarget = () => {
+        targetX = 0
+        targetY = 0
+      }
+
+      const animateFollow = () => {
+        currentX += (targetX - currentX) * 0.08
+        currentY += (targetY - currentY) * 0.08
+        root.style.setProperty("--follow-x", currentX.toFixed(4))
+        root.style.setProperty("--follow-y", currentY.toFixed(4))
+        requestAnimationFrame(animateFollow)
+      }
+
+      window.addEventListener("pointermove", updateTarget, { passive: true })
+      window.addEventListener("pointerleave", resetTarget)
+      animateFollow()
+    </script>
   </body>
 </html>
