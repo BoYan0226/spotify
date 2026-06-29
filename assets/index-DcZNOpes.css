@@ -20,7 +20,7 @@ body {
 #webgl {
   position: fixed;
   inset: 0;
-  z-index: 0;
+  z-index: 1;
   width: 100vw;
   height: 100dvh;
   display: block;
@@ -31,6 +31,26 @@ body {
       0
     )
     scale(1.12);
+  transition: transform 0.08s linear;
+  will-change: transform;
+}
+
+.perspective-grid {
+  position: fixed;
+  inset: -6vh -6vw;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("./grid.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 1;
+  transform: translate3d(
+      calc(var(--follow-x) * -34px),
+      calc(var(--follow-y) * -30px),
+      0
+    )
+    scale(1.08);
   transition: transform 0.08s linear;
   will-change: transform;
 }
@@ -63,14 +83,13 @@ body {
   width: min(100%, 300px);
   padding: 54px 44px 42px;
   border-radius: 28px;
-  border: 1px solid rgba(226, 226, 226, 0.58);
+  border: 1px solid rgba(228, 228, 228, 0.58);
   background: linear-gradient(
     145deg,
-    rgba(240, 240, 240, 0.58),
+    rgba(243, 243, 243, 0.58),
     rgba(255, 255, 255, 0.2)
   );
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.72),
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72),
     inset 0 -1px 0 rgba(255, 255, 255, 0.22);
   -webkit-backdrop-filter: blur(30px) saturate(160%);
   backdrop-filter: blur(30px) saturate(160%);
@@ -182,7 +201,7 @@ body {
 
 .form-error {
   margin: 12px 0 8px;
-  color: #d43c32;
+  color: #d48032;
   font-size: 14px;
   font-weight: 500;
   text-align: left;
@@ -236,6 +255,17 @@ body {
 }
 
 @media (max-width: 520px) {
+  @media (max-width: 520px) {
+  .perspective-grid {
+    transform: translate3d(
+        calc(var(--follow-x) * -24px),
+        calc(var(--follow-y) * -20px),
+        0
+      )
+      scale(1.1);
+  }
+}
+
   .login-shell {
     padding: 18px;
   }
