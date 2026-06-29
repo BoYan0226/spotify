@@ -1,1 +1,208 @@
-*{scrollbar-color:transparent transparent;scrollbar-width:none}html,body{margin:0;width:100%;height:100%;line-height:1.15;overflow:hidden}#webgl{position:fixed;inset:0;z-index:0;width:100vw;height:100dvh;display:block;touch-action:none}.brand-logo{position:fixed;top:28px;left:32px;z-index:3;width:157px;height:auto;display:block;pointer-events:none}.login-shell{position:fixed;inset:0;z-index:2;display:grid;place-items:center;padding:24px;pointer-events:none}.login-card{width:min(100%,440px);padding:54px 44px 42px;border-radius:28px;background:#ffffffeb;box-shadow:0 26px 80px #14182029;-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);pointer-events:auto;text-align:center;color:#202124;font-family:PingFang SC,Microsoft YaHei,Noto Sans SC,Arial,sans-serif}.login-card h1{margin:0;color:#202124;font-size:clamp(48px,8vw,68px);font-weight:900;line-height:.98;letter-spacing:0}.login-subtitle{margin:16px 0 52px;color:#8f99a7;font-size:20px;font-weight:800;letter-spacing:0}.login-form{margin:0}.phone-field{box-sizing:border-box;display:grid;grid-template-columns:58px 1px 1fr;align-items:center;width:100%;height:60px;border:3px solid #6b6b6b;border-radius:18px;background:#ffffffd1;overflow:hidden;transition:border-color .16s ease,box-shadow .16s ease}.phone-field:focus-within{border-color:#202124;box-shadow:0 0 0 4px #ffe05d5c}.country-code{color:#8290a4;font-size:16px;font-weight:800}.field-divider{width:2px;height:25px;background:#d9dde4}.phone-field input{min-width:0;height:100%;padding:0 24px;border:0;outline:0;background:transparent;color:#202124;font:inherit;font-size:16px}.phone-field input::placeholder{color:#909aaa}.form-error{margin:12px 0 8px;color:#d43c32;font-size:14px;font-weight:500;text-align:left;visibility:visible}.login-form:not(.has-error) .form-error{visibility:hidden}.code-button{width:100%;height:58px;border:0;border-radius:18px;background:#ffe46d;color:#202124;cursor:pointer;font:inherit;font-size:16px;font-weight:900;transition:transform .16s ease,background .16s ease,box-shadow .16s ease}.code-button:hover{background:#ffde4a;box-shadow:0 10px 26px #ebbd1f3d}.code-button:active{transform:translateY(1px)}.terms{margin:25px 0 0;color:#8a95a3;font-size:14px;font-weight:800;line-height:1.6;letter-spacing:0}.terms a{color:#202124;font-weight:900;text-decoration:none}.terms a:hover{text-decoration:underline}@media(max-width:520px){.login-shell{padding:18px}.login-card{padding:42px 22px 32px;border-radius:22px}.login-subtitle{margin-bottom:40px;font-size:17px}.phone-field{grid-template-columns:54px 1px 1fr;height:58px}.brand-logo{top:18px;left:18px;width:126px}}
+* {
+  scrollbar-color: transparent transparent;
+  scrollbar-width: none;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  line-height: 1.15;
+  overflow: hidden;
+}
+
+#webgl {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  width: 100vw;
+  height: 100dvh;
+  display: block;
+  touch-action: none;
+}
+
+.brand-logo {
+  position: fixed;
+  top: 28px;
+  left: 32px;
+  z-index: 3;
+  width: 200px;
+  height: auto;
+  display: block;
+  pointer-events: none;
+}
+
+.login-shell {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  pointer-events: none;
+}
+
+.login-card {
+  width: min(100%, 300px);
+  padding: 54px 44px 42px;
+  border-radius: 28px;
+  background: #ffffffeb;
+  box-shadow: 0 26px 80px #14182029;
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  pointer-events: auto;
+  text-align: center;
+  color: #202124;
+  font-family: PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif;
+}
+
+.login-card h1 {
+  margin: 0;
+  color: #202124;
+  font-size: 42px;
+  font-weight: 900;
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+
+.login-subtitle {
+  margin: 12px 0 44px;
+  color: #8f99a7;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.login-form {
+  margin: 0;
+}
+
+.phone-field {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 58px 1px 1fr;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  border: 2px solid #6b6b6b;
+  border-radius: 18px;
+  background: #ffffffd1;
+  overflow: hidden;
+  transition: border-color 0.16s ease, box-shadow 0.16s ease;
+}
+
+.phone-field:focus-within {
+  border-color: #202124;
+  box-shadow: 0 0 0 4px #ffe05d5c;
+}
+
+.country-code {
+  color: #8290a4;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.field-divider {
+  width: 2px;
+  height: 25px;
+  background: #d9dde4;
+}
+
+.phone-field input {
+  min-width: 0;
+  height: 100%;
+  padding: 0 24px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #202124;
+  font: inherit;
+  font-size: 16px;
+}
+
+.phone-field input::placeholder {
+  color: #909aaa;
+}
+
+.form-error {
+  margin: 12px 0 8px;
+  color: #d43c32;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  visibility: visible;
+}
+
+.login-form:not(.has-error) .form-error {
+  visibility: hidden;
+}
+
+.code-button {
+  width: 100%;
+  height: 50px;
+  border: 0;
+  border-radius: 18px;
+  background: #ffe46d;
+  color: #202124;
+  cursor: pointer;
+  font: inherit;
+  font-size: 16px;
+  font-weight: 900;
+  transition: transform 0.16s ease, background 0.16s ease, box-shadow 0.16s ease;
+}
+
+.code-button:hover {
+  background: #ffde4a;
+  box-shadow: 0 10px 26px #ebbd1f3d;
+}
+
+.code-button:active {
+  transform: translateY(1px);
+}
+
+.terms {
+  margin: 25px 0 0;
+  color: #8a95a3;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.6;
+  letter-spacing: 0;
+}
+
+.terms a {
+  color: #202124;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.terms a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 520px) {
+  .login-shell {
+    padding: 18px;
+  }
+
+  .login-card {
+    padding: 42px 22px 32px;
+    border-radius: 22px;
+  }
+
+  .login-subtitle {
+    margin-bottom: 40px;
+    font-size: 17px;
+  }
+
+  .phone-field {
+    grid-template-columns: 54px 1px 1fr;
+    height: 58px;
+  }
+
+  .brand-logo {
+    top: 18px;
+    left: 18px;
+    width: 126px;
+  }
+}
