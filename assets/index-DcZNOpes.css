@@ -53,7 +53,7 @@ body {
       calc(var(--follow-y) * 48px),
       0
     )
-    scale(1.12);
+    scale;
   transition: transform 0.08s linear;
   will-change: transform;
 }
