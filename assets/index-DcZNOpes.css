@@ -275,36 +275,36 @@ body {
   @media (max-width: 520px) {
   .perspective-grid {
     transform: translate3d(
-        calc(var(--follow-x) * -24px),
-        calc(var(--follow-y) * -20px),
+        calc(var(--follow-x) * 34px),
+        calc(var(--follow-y) * 30px),
         0
       )
-      scale(1.1);
+      scale;
   }
 }
 
   .login-shell {
-    padding: 18px;
+    padding: 24px;
   }
 
   .login-card {
-    padding: 42px 22px 32px;
-    border-radius: 22px;
+    padding: 70px 50px 70px;
+    border-radius: 28px;
   }
 
   .login-subtitle {
-    margin-bottom: 40px;
-    font-size: 17px;
+    margin: 15px 25px;
+    font-size: 14px;
   }
 
   .phone-field {
-    grid-template-columns: 54px 1px 1fr;
-    height: 58px;
+    grid-template-columns: 58px 1px 1fr;
+    height: 50px;
   }
 
   .brand-logo {
     top: 18px;
     left: 18px;
-    width: 126px;
+    width: 200px;
   }
 }
