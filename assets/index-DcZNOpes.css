@@ -113,15 +113,25 @@ body {
     rgba(238, 238, 238, 0.5)
   );
   box-shadow:
+    0 10px 15px rgba(134, 134, 134, 0),
     inset 0 2px 0 rgba(255, 255, 255, 0.72),
     inset 0 -2px 0 rgba(255, 255, 255, 0.22);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
   -webkit-backdrop-filter: blur(30px) saturate(160%);
   backdrop-filter: blur(30px) saturate(160%);
   pointer-events: auto;
   text-align: center;
   color: #202124;
   font-family: PingFang SC, Microsoft YaHei, Noto Sans SC, Arial, sans-serif;
-  transform: none;
+}
+
+.login-card:hover {
+  transform: translateY(0px);
+  box-shadow:
+    0 5px 10px rgba(128, 128, 128, 0.199),
+    inset 0 2px 0 rgba(255, 255, 255, 0.72),
+    inset 0 -2px 0 rgba(255, 255, 255, 0.22);
 }
 
 .login-card::before {
@@ -240,10 +250,11 @@ body {
   font: inherit;
   font-size: 16px;
   font-weight: 900;
-  transition: transform 0.16s ease, background 0.16s ease, box-shadow 0.16s ease;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
 }
 
 .code-button:hover {
+  transform: translateY(-1px);
   background: #ffde4a;
   box-shadow: 0 10px 26px #ebbd1f3d;
 }
