@@ -104,7 +104,7 @@ body {
   overflow: hidden;
   isolation: isolate;
   width: min(100%, 300px);
-  padding: 54px 44px 42px;
+  padding: 70px 50px 70px;
   border-radius: 28px;
   border: 1px solid rgba(201, 201, 201, 0.507);
   background: linear-gradient(
