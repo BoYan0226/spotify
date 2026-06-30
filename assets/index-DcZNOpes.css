@@ -183,7 +183,7 @@ body {
 
 .phone-field:focus-within {
   border-color: #202124;
-  box-shadow: 0 0 0 4px #ffe05d5c;
+  box-shadow:none;
 }
 
 .country-code {
@@ -208,6 +208,7 @@ body {
   color: #202124;
   font: inherit;
   font-size: 16px;
+  font-weight: 500;
 }
 
 .phone-field input::placeholder {
