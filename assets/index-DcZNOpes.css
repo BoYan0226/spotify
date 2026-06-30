@@ -216,7 +216,7 @@ body {
 }
 
 .form-error {
-  margin: 0 0 5px;
+  margin: 0 0 10px;
   color: #d43d32b7;
   font-size: 14px;
   font-weight: 600;
