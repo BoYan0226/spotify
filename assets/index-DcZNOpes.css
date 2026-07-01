@@ -138,8 +138,8 @@ body {
   -webkit-backdrop-filter: blur(35px) saturate(180%);
   backdrop-filter: blur(35px) saturate(180%);
   pointer-events: none;
-  transition: inset 0.35s ease, border-radius 0.35s ease,
-    backdrop-filter 0.35s ease, -webkit-backdrop-filter 0.35s ease;
+  transition: inset 0.2s ease, border-radius 0.2s ease,
+    backdrop-filter 0.2s ease, -webkit-backdrop-filter 0.2s ease;
 }
 
 .login-card:hover::before {
@@ -147,8 +147,8 @@ body {
   border-radius: 0;
   -webkit-backdrop-filter: blur(70px) saturate(180%);
   backdrop-filter: blur(70px) saturate(180%);
-  transition: inset 1s ease, border-radius 1s ease,
-    backdrop-filter 1s ease, -webkit-backdrop-filter 1s ease;
+  transition: inset 0.7s ease, border-radius 0.7s ease,
+    backdrop-filter 0.7s ease, -webkit-backdrop-filter 0.7s ease;
 }
 
 .login-card > * {
