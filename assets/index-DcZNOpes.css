@@ -151,21 +151,18 @@ body {
 }
 
 @media (min-width: 521px) {
-  .login-card:has(.login-hover-zone:hover)::before,
-  .login-card:has(h1:hover)::before,
-  .login-card:has(.login-subtitle:hover)::before,
-  .login-card:has(.login-form:hover)::before,
-  .login-card:has(.terms:hover)::before {
+  .login-card:hover::before {
     inset: -50vh -50vw;
     border-radius: 0;
     -webkit-backdrop-filter: blur(70px) saturate(180%);
     backdrop-filter: blur(70px) saturate(180%);
     transition: inset 0.5s ease, border-radius 0.5s ease,
       backdrop-filter 0.5s ease, -webkit-backdrop-filter 0.5s ease;
+    transition-delay: 0.05s;
   }
 }
 
-.login-card > *:not(.login-hover-zone) {
+.login-card > * {
   position: relative;
   z-index: 1;
 }
@@ -317,17 +314,6 @@ body {
     width: calc(100vw - 40px);
     padding: 70px 50px 70px;
     border-radius: 25px;
-  }
-
-  .login-card:hover {
-    padding: 70px 50px 70px;
-  }
-
-  .login-card:hover::before {
-    inset: 0;
-    border-radius: 25px;
-    -webkit-backdrop-filter: blur(35px) saturate(180%);
-    backdrop-filter: blur(35px) saturate(180%);
   }
 
   .login-card:focus-within {
