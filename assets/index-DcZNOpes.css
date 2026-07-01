@@ -64,7 +64,7 @@ body {
   inset: -0vh -0vw;
   z-index: 0;
   pointer-events: none;
-  background-image: url("./grid.svg");
+  background-image: url("./grid.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
