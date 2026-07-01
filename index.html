@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spotify Visualiser</title>
     <script type="module" crossorigin src="./assets/index-DweDM9RM.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-DcZNOpes.css?v=6">
+    <link rel="stylesheet" crossorigin href="./assets/index-DcZNOpes.css?v=6" />
   </head>
   <body>
     <canvas id="webgl"></canvas>
     <div class="perspective-grid" aria-hidden="true"></div>
     <div class="edge-blur" aria-hidden="true"></div>
-    <img class="brand-logo" src="logo.svg" alt="Company logo" />
+
     <main class="login-shell" aria-label="Login">
       <section class="login-card">
+        <img class="brand-logo" src="logo.svg" alt="Company logo" />
+
         <h1>欢迎回来</h1>
         <p class="login-subtitle">手机号快捷登录 · 安全认证</p>
 
@@ -44,6 +46,7 @@
         </p>
       </section>
     </main>
+
     <script>
       const root = document.documentElement
       let targetX = 0
