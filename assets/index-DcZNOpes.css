@@ -105,7 +105,7 @@ body {
   overflow: visible;
   isolation: isolate;
   width: min(100%, 300px);
-  padding: 90px 60px 90px;
+  padding: 70px 50px 70px;
   border-radius: 30px;
   border: 0;
   background: transparent;
@@ -295,12 +295,14 @@ body {
   }
 
   .login-shell {
-    padding: 24px;
+    padding: 0px;
   }
 
   .login-card {
+    box-sizing: border-box;
+    width: calc(100vw - 40px);
     padding: 70px 50px 70px;
-    border-radius: 20px;
+    border-radius: 28px;
   }
 
   .login-card:hover {
@@ -321,5 +323,9 @@ body {
     top: 18px;
     left: 18px;
     width: 120px;
+  }
+
+  .terms {
+    font-size: 10px;
   }
 }
