@@ -306,7 +306,7 @@ body {
   }
 
   .login-shell {
-    padding: 0px;
+   padding: 0px;
   }
 
   .login-card {
@@ -340,11 +340,11 @@ body {
   }
 
   .brand-logo {
-    position: absolute;
+   position: fixed;
     top: 18px;
     left: 18px;
-    width: 100px;
-    z-index: 5;
+    width: 120px;
+   z-index: 5;
   }
 
   .terms {
