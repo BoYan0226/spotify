@@ -261,8 +261,8 @@ body {
   color: #202124;
   cursor: pointer;
   font: inherit;
-  font-size: 14px;
-  font-weight: 900;
+  font-size: 16px;
+  font-weight: 600;
   transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
 }
 
