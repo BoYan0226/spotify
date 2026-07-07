@@ -274,7 +274,7 @@ body {
 
 .code-button:active {
   transform: translateY(1px);
-  background: #a89333;
+  background: #ffde4a7a;
 }
 
 .terms {
