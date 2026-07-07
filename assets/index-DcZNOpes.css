@@ -138,27 +138,17 @@ body {
   -webkit-backdrop-filter: blur(35px) saturate(180%);
   backdrop-filter: blur(35px) saturate(180%);
   pointer-events: none;
-  transition: inset 0.2s ease, border-radius 0.2s ease,
-    backdrop-filter 0.2s ease, -webkit-backdrop-filter 0.2s ease;
+  transition: inset 0.2s ease, border-radius 0.2s ease;
 }
 
-.login-hover-zone {
-  position: absolute;
-  inset: 100px;
-  z-index: 0;
-  pointer-events: auto;
-  display: block;
-}
 
 @media (min-width: 521px) {
   .login-card:hover::before {
     inset: -50vh -50vw;
     border-radius: 0;
-    -webkit-backdrop-filter: blur(70px) saturate(180%);
-    backdrop-filter: blur(70px) saturate(180%);
-    transition: inset 0.5s ease, border-radius 0.5s ease,
-      backdrop-filter 0.5s ease, -webkit-backdrop-filter 0.5s ease;
-    transition-delay: 0.05s;
+    -webkit-backdrop-filter: blur(35px) saturate(180%);
+    backdrop-filter: blur(35px) saturate(180%);
+    transition: inset 0.5s ease 0.05s, border-radius 0.5s ease 0.05s;
   }
 }
 
@@ -257,22 +247,29 @@ body {
   height: 50px;
   border: 0;
   border-radius: 15px;
-  background: rgba(255, 228, 109, 0.92);
-  color: #202124;
-  cursor: pointer;
+  background: rgba(255, 228, 109, 0.38);
+  color: rgba(32, 33, 36, 0.45);
+  cursor: not-allowed;
   font: inherit;
   font-size: 16px;
   font-weight: 600;
-  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease,
+    color 0.2s ease;
 }
 
-.code-button:hover {
+.login-form:has(#phone:valid) .code-button {
+  background: rgba(255, 228, 109, 0.92);
+  color: #202124;
+  cursor: pointer;
+}
+
+.login-form:has(#phone:valid) .code-button:hover {
   transform: translateY(-1px);
   background: #ffde4a;
   box-shadow: 0 10px 26px #ebbd1f3d;
 }
 
-.code-button:active {
+.login-form:has(#phone:valid) .code-button:active {
   transform: translateY(1px);
   background: #ffde4a7a;
 }
@@ -322,12 +319,11 @@ body {
   }
 
   .login-card:focus-within::before {
-    inset: -50vh -50vw;
-    border-radius: 0;
-    -webkit-backdrop-filter: blur(50px) saturate(180%);
-    backdrop-filter: blur(50px) saturate(180%);
-    transition: inset 1s ease, border-radius 1s ease,
-      backdrop-filter 1s ease, -webkit-backdrop-filter 1s ease;
+    inset: -35vh -35vw;
+   border-radius: 0;
+   -webkit-backdrop-filter: blur(35px) saturate(160%);
+   backdrop-filter: blur(35px) saturate(160%);
+   transition: inset 0.5s ease, border-radius 0.5s ease;
   }
 
   .login-subtitle {
