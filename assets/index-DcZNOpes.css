@@ -247,6 +247,7 @@ body {
   width: 100%;
   height: 50px;
   padding: 0 14px;
+  border: 2px solid rgba(129, 129, 129, 0.72);
   border-radius: 15px;
   background: rgba(230, 230, 230, 0.56);
   -webkit-backdrop-filter: blur(14px);
@@ -351,7 +352,7 @@ body {
 }
 
 .verification-field:focus-within {
-  border-color: #202124;
+  border-color: rgba(96, 98, 104, 0.68);
 }
 
 .verification-field input {
