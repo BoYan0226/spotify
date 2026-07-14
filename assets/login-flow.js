@@ -21,6 +21,44 @@ if (
 ) {
   const phoneIsValid = () => /^1\d{10}$/.test(phoneInput.value)
   const codeIsValid = () => /^\d{6}$/.test(codeInput.value)
+  const resendLabel = resendButton.querySelector("span")
+  const resendIcon = resendButton.querySelector("img")
+  const resendDelay = 60 * 1000
+  let resendDeadline = 0
+  let resendTimer = null
+
+  const stopResendCountdown = () => {
+    if (resendTimer) window.clearInterval(resendTimer)
+    resendTimer = null
+    resendDeadline = 0
+    resendButton.disabled = false
+    resendButton.setAttribute("aria-label", "重新发送")
+    if (resendLabel) resendLabel.textContent = "重新发送"
+  }
+
+  const updateResendCountdown = () => {
+    const remainingSeconds = Math.max(
+      0,
+      Math.ceil((resendDeadline - Date.now()) / 1000),
+    )
+
+    if (remainingSeconds === 0) {
+      stopResendCountdown()
+      return
+    }
+
+    const countdownText = `${remainingSeconds}s 后重发`
+    resendButton.setAttribute("aria-label", `${remainingSeconds} 秒后可重新发送`)
+    if (resendLabel) resendLabel.textContent = countdownText
+  }
+
+  const startResendCountdown = () => {
+    if (resendTimer) window.clearInterval(resendTimer)
+    resendDeadline = Date.now() + resendDelay
+    resendButton.disabled = true
+    updateResendCountdown()
+    resendTimer = window.setInterval(updateResendCountdown, 250)
+  }
 
   const setPhoneError = (showError) => {
     form.classList.toggle("has-error", showError)
@@ -41,10 +79,12 @@ if (
 
     if (codeSent) {
       maskedPhone.textContent = `${phoneInput.value.slice(0, 3)}****${phoneInput.value.slice(-4)}`
+      startResendCountdown()
       window.setTimeout(() => codeInput.focus(), 260)
       return
     }
 
+    stopResendCountdown()
     codeInput.value = ""
     setCodeError(false)
     window.setTimeout(() => phoneInput.focus(), 80)
@@ -67,21 +107,11 @@ if (
   editButton.addEventListener("click", () => setCodeSent(false))
 
   resendButton.addEventListener("click", () => {
-    const label = resendButton.querySelector("span")
-    const icon = resendButton.querySelector("img")
-
-    resendButton.disabled = true
-    if (label) label.textContent = "已重新发送"
-    if (icon) {
-      icon.classList.remove("is-spinning")
-      requestAnimationFrame(() => icon.classList.add("is-spinning"))
+    if (resendIcon) {
+      resendIcon.classList.remove("is-spinning")
+      requestAnimationFrame(() => resendIcon.classList.add("is-spinning"))
     }
-
-    window.setTimeout(() => {
-      resendButton.disabled = false
-      if (label) label.textContent = "重新发送"
-      if (icon) icon.classList.remove("is-spinning")
-    }, 1200)
+    startResendCountdown()
   })
 
   form.addEventListener("submit", (event) => {
